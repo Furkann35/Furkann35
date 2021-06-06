@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Furkan</h1>
-<h3 align="center">A passionate fullstack developer from Turkey</h3>
+<h3 align="center">A passionate FullStack Web Developer from Turkey</h3>
 
 - 🔭 I’m currently working on [ReCapProject](https://github.com/Furkann35/ReCapProject)
 
