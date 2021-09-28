@@ -1,0 +1,14 @@
+<div  class="card-body">
+    <form [formGroup]="recourseAddForm">
+        <div  *ngFor="let answerDto of answersDtos" class="mb-3" (click)="setCurrentAnswersDto(answerDto)">
+            <label for="answersDtos">{{answerDto.question}}</label>
+            <div class="form-group">
+                
+                <input   [(ngModel)]="answerDto.answer" formControlName="answer"  type="text" id="answer" class="form-control"/>
+            </div>
+        </div>
+        <div class="card-footer">
+             <button class="btn btn-fill btn-success" (click)="add()" style="float: right;">Ekle</button>
+
+        </div>
+    </form>

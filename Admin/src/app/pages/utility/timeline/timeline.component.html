@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <app-pagetitle title="Starter Page" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+  <div class="row justify-content-center">
+    <div class="col-xl-10">
+      <div class="timeline" dir="ltr">
+        <div class="timeline-item timeline-left">
+          <div class="timeline-block">
+            <div class="time-show-btn mt-0">
+              <a href="javascript: void(0);" class="btn btn-danger btn-rounded w-lg">2020</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" *ngFor="let data of timelineData"
+          [ngClass]="{'timeline-left': data.align === 'left'}">
+          <div class="timeline-block">
+            <div class="timeline-box card">
+              <div class="card-body">
+                <span class="timeline-icon"></span>
+                <div class="timeline-date">
+                  <i class="mdi mdi-circle-medium circle-dot"></i>
+                  {{data.date}}
+                </div>
+                <h5 class="mt-3 foont-size-15">{{data.title}}</h5>
+                <div class="text-muted">
+                  <p class="mb-0">{{data.text}}</p>
+                </div>
+                <div class="timeline-album" *ngIf="data.images">
+                  <a href="javascript: void(0);" class="mr-1">
+                    <img :src="{{data.images[0]}}" alt />
+                  </a>
+                  <a href="javascript: void(0);" class="mr-1">
+                    <img :src="{{data.images[1]}}" alt />
+                  </a>
+                  <a href="javascript: void(0);" class="mr-1">
+                    <img :src="{{data.images[2]}}" alt />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <app-pagetitle title="Customers"></app-pagetitle>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <!--  -->
+          
+          </div>
+          <div class="table-responsive mt-3">
+            <table class="table table-centered datatable dt-responsive nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+              <thead>
+                <tr>
+                  <th sortable="billingname">Hex İdler</th>
+                  <th sortable="billingname" >Lisanslar</th>
+                  <th sortable="total" >Paralar</th>
+                  <th sortable="billingname" >İsimler</th>
+                  <th sortable="billingname" >Skin</th>
+                  <th sortable="billingname" >Meslekler</th>
+                  <th sortable="billingname" >Meslek Seviye</th>
+                  <th sortable="billingname" >LoadOut</th>
+                  <th sortable="billingname" >Pozisyonlar</th>
+                  <th sortable="billingname" >Banka Paraları</th>
+                  <th sortable="billingname" >Yetkiler</th>
+                  <th sortable="billingname" >Yetenekler</th>
+                  <th sortable="billingname" >Adlar</th>
+                  <th sortable="billingname" >Soy Adlar</th>
+                  <th sortable="billingname" >Doğum Tarihleri</th>
+                  <th sortable="billingname" >Cinsiyetler</th>
+                  <th sortable="billingname" >Boy Uzunlukları</th>
+                  <th sortable="paymentstatus" >Dövmeler</th>
+                  <th sortable="paymentstatus" >Telefon Numaraları</th>
+                  <th sortable="paymentstatus" >Evler</th>
+                  <th sortable="paymentstatus" >bought_furniture</th>
+                  <th sortable="paymentstatus" >Hapis</th>
+                  <th sortable="paymentstatus" >lastdigits</th>
+                  <th sortable="paymentstatus" >status</th>
+                  <th sortable="paymentstatus" >last_property</th>
+                  <th sortable="paymentstatus" >last_motel</th>
+                  <th sortable="paymentstatus" >last_motel_room</th>
+                  <th sortable="paymentstatus" >Armorlar</th>
+                  <th sortable="paymentstatus" >Crypto</th>
+                  <th sortable="paymentstatus" >Ölüm Bilgileri</th>
+                  <th>İşlemler</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fivemuser of fivemUser">
+                  <td>{{fivemuser.identifier}}</td>
+                  <td>{{fivemuser.license}}</td>
+                  <td>{{fivemuser.money}}</td>
+                  <td>{{fivemuser.name}}</td>
+                  <td>{{fivemuser.skin}}</td>
+                  <td>{{fivemuser.job}}</td>
+                  <td>{{fivemuser.job_grade}}</td>
+                  <td>{{fivemuser.loadout}}</td>
+                  <td>{{fivemuser.position}}</td>
+                  <td>{{fivemuser.bank}}</td>
+                  <td>{{fivemuser.permission_level}}</td>
+                  <td>{{fivemuser.skills}}</td>
+                  <td>{{fivemuser.firstname}}</td>
+                  <td>{{fivemuser.lastname}}</td>
+                  <td>{{fivemuser.dateofbirth}}</td>
+                  <td>{{fivemuser.sex}}</td>
+                  <td>{{fivemuser.height}}</td>
+                  <td>{{fivemuser.tattoos}}</td>
+                  <td>{{fivemuser.house}}</td>
+                  <td>{{fivemuser.bought_furniture}}</td>
+                  <td>{{fivemuser.jail}}</td>
+                  <td>{{fivemuser.lastdigits}}</td>
+                  <td>{{fivemuser.status}}</td>
+                  <td>{{fivemuser.last_property}}</td>
+                  <td>{{fivemuser.last_motel}}</td>
+                  <td>{{fivemuser.last_motel_room}}</td>
+                  <td>{{fivemuser.armour}}</td>
+                  <td>{{fivemuser.crypto}}</td>
+                  <td>{{fivemuser.is_dead}}</td>
+                  <!-- <td>{{fivemuser.date  | date:'dd/MM/yyyy'}}</td>
+                    <td class="badge font-size-12" [ngClass]="{'badge-soft-danger': fivemuser.stateId === 1,
+                    'badge-soft-success':fivemuser.stateId === 2,
+                    'badge-soft-warning': fivemuser.stateId === 0}">
+                      <ngb-highlight [result]="fivemuser.state" ></ngb-highlight>
+                  </td>                -->
+
+                  <td>
+                    
+                    <a routerLink="/email/inbox/fivemUserDetail/{{fivemuser.identifier}}" class="mr-3 text-primary" v-b-tooltip.hover title="Ayrıntıları Görüntüle">
+                      <i class="mdi mdi-pencil font-size-18"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="text-danger" v-b-tooltip.hover title="Delete">
+                      <i class="mdi mdi-trash-can font-size-18"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

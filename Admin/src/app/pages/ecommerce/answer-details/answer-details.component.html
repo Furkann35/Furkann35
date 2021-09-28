@@ -1,0 +1,26 @@
+<a (click)=answerAllAccepted(answer) class="bg-success btn text-white">Kabul et</a>
+<a (click)=answerAllDenied(answer) class="bg-danger btn text-white">Red et</a>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <th scope="col">Kullanıcı Adı</th>
+            <th scope="col">Kullanıcı Soy adı</th>
+            <th scope="col">Soru</th>
+            <th scope="col">Cevap</th>
+            <th scope="col">Başvuru Durumu</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let answersDto of answersDtos" (click)="setCurrentAnswersDto(answersDto)">
+            <td>{{answersDto.userName }}</td>
+            <td>{{answersDto.lastName}}</td>
+            <td>{{answersDto.question}}</td>
+            <td>{{answersDto.answer}}</td>
+            <td>{{answersDto.state}}</td>
+        </tr>
+    </tbody>
+
+</table>
+

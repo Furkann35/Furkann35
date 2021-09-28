@@ -1,0 +1,32 @@
+export interface FivemUser{
+   identifier:string;
+   license:string;
+   money:number;
+   name:string;
+   skin:string;
+   job:string;
+   job_grade:number;
+   loadout:string;
+   position:string;
+   bank:number;
+   permission_level:number;
+   skills:string;
+   firstname:string;
+   lastname:string;
+   dateofbirth:string;
+   sex:string;
+   height:string;
+   tattoos:string;
+   phone_number:string;
+   house:string;
+   bought_furniture:string;
+   jail:number;
+   lastdigits:string;
+   status:string;
+   last_property:string;
+   last_motel:string;
+   last_motel_room:string;
+   armour:number;
+   crypto:string;
+   is_dead:number; 
+}

@@ -1,0 +1,128 @@
+<div class="container-fluid">
+  <app-pagetitle title="Add Product" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <aw-wizard>
+            <aw-wizard-step stepTitle="Basic Info">
+              <div class="tab-pane" id="basic-info">
+                <h4 class="card-title">Basic Information</h4>
+                <p class="card-title-desc">Fill all information below</p>
+
+                <form>
+                  <div class="form-group">
+                    <label for="productname">Product Name</label>
+                    <input id="productname" name="productname" type="text" class="form-control">
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label for="manufacturername">Manufacturer Name</label>
+                        <input id="manufacturername" name="manufacturername" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label for="manufacturerbrand">Manufacturer Brand</label>
+                        <input id="manufacturerbrand" name="manufacturerbrand" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label for="price">Price</label>
+                        <input id="price" name="price" type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="control-label">Category</label>
+                        <select class="form-control select2">
+                          <option>Select</option>
+                          <option value="EL">Electronic</option>
+                          <option value="FA">Fashion</option>
+                          <option value="FI">Fitness</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="control-label">Features</label>
+                        <ng-select [items]="selectValue" [multiple]="true"></ng-select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="productdesc">Product Description</label>
+                    <textarea class="form-control" id="productdesc" rows="5"></textarea>
+                  </div>
+                </form>
+              </div>
+              <button type="button" awNextStep class="btn btn-primary">Next Step</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="Product Img" awOptionalStep>
+              <div class="tab-pane" id="product-img">
+                <h4 class="card-title">Product Images</h4>
+                <p class="card-title-desc">Upload product image</p>
+                <dropzone class="dropzone"></dropzone>
+
+                <!-- <form action="/" method="post" class="dropzone">
+                  <div class="fallback">
+                    <input name="file" type="file" multiple />
+                  </div>
+
+                  <div class="dz-message needsclick">
+                    <div class="mb-3">
+                      <i class="display-4 text-muted ri-upload-cloud-2-line"></i>
+                    </div>
+
+                    <h4>Drop files here or click to upload.</h4>
+                  </div>
+                </form> -->
+              </div>
+              <button type="button" awPreviousStep class="btn btn-primary">Go to previous step</button>
+              <button type="button" awNextStep class="btn btn-primary">Go to next step</button>
+            </aw-wizard-step>
+            <aw-wizard-step stepTitle="Meta Data">
+              <div class="tab-pane" id="metadata">
+                <h4 class="card-title">Meta Data</h4>
+                <p class="card-title-desc">Fill all information below</p>
+
+                <form>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="metatitle">Meta title</label>
+                        <input id="metatitle" name="metatitle" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="metakeywords">Meta Keywords</label>
+                        <input id="metakeywords" name="metakeywords" type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="metadescription">Meta Description</label>
+                    <textarea class="form-control" id="metadescription" rows="5"></textarea>
+                  </div>
+                </form>
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-primary mr-2 waves-effect waves-light">Save Changes</button>
+                  <button type="submit" class="btn btn-light waves-effect">Cancel</button>
+                </div>
+              </div>
+              <div class="pager wizard twitter-bs-wizard-pager-link">
+                <button class="btn btn-primary" awPreviousStep>Previous Step</button>
+                <button type="button" class="btn btn-primary">Finish</button>
+              </div>
+            </aw-wizard-step>
+          </aw-wizard>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

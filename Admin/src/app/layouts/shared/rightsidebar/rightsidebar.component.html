@@ -1,0 +1,38 @@
+<!-- Right Sidebar -->
+<div class="right-bar" (clickOutside)="hide()" [exclude]="'.right-bar-toggle'">
+  <div data-simplebar class="h-100">
+    <div class="rightbar-title px-3 py-4">
+      <a href="javascript:void(0);" class="right-bar-toggle float-right" (click)="hide()">
+        <i class="mdi mdi-close noti-icon"></i>
+      </a>
+      <h5 class="m-0">Settings</h5>
+    </div>
+
+    <!-- Settings -->
+    <hr class="mt-0" />
+    <h6 class="text-center mb-0">Choose Layouts</h6>
+
+    <div class="p-4">
+      <div class="mb-2">
+        <a href="//nazox-v-light.angular.themesdesign.in" target="_blank">
+          <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
+        </a>
+      </div>
+      <div class="mb-2">
+        <a href="//nazox-v-dark.angular.themesdesign.in" target="_blank">
+          <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
+        </a>
+      </div>
+      <div class="mb-2">
+        <a href="//nazox-v-rtl.angular.themesdesign.in" target="_blank">
+          <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
+        </a>
+      </div>
+    </div>
+
+  </div> <!-- end slimscroll-menu-->
+</div>
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>

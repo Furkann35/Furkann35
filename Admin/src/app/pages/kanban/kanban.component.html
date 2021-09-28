@@ -1,0 +1,215 @@
+<div class="container-fluid">
+  <app-pagetitle title="Kanban Board" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+
+  <div class="row mb-2">
+    <div class="col-lg-6">
+      <div class="media">
+        <div class="mr-3">
+          <img src="assets/images/logo-sm-light.png" alt="" class="avatar-xs">
+        </div>
+        <div class="media-body">
+          <h5>Nazox admin Dashboard</h5>
+          <span class="badge badge-soft-success">Open</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="text-lg-right">
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="d-inline-block" data-toggle="tooltip" data-placement="top"
+              ngbTooltip="Aaron Williams">
+              <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-xs" alt="">
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="d-inline-block" data-toggle="tooltip" data-placement="top"
+              ngbTooltip="Jonathan McKinney">
+              <div class="avatar-xs">
+                <span class="avatar-title rounded-circle bg-soft-primary text-primary">
+                  J
+                </span>
+              </div>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="d-inline-block" data-toggle="tooltip" data-placement="top"
+              ngbTooltip="Carole Connolly">
+              <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs" alt="">
+            </a>
+          </li>
+
+          <li class="list-inline-item">
+            <a href="javascript: void(0);" class="py-1">
+              <i class="mdi mdi-plus mr-1"></i> New member
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card-body">
+        <div class="dropdown float-right" ngbDropdown>
+          <a href="javascript: void(0);" class="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false"
+            ngbDropdownToggle>
+            <i class="mdi mdi-dots-vertical m-0 text-muted font-size-20"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <a class="dropdown-item" ngbDropdownItem>Edit</a>
+            <a class="dropdown-item" ngbDropdownItem>Delete</a>
+          </div>
+        </div> <!-- end dropdown -->
+        <h4 class="card-title">Todo</h4>
+        <p class="mb-0">3 Tasks</p>
+      </div>
+      <div class="card">
+        <div class="card-body border-bottom">
+
+          <div id="Todo-task" class="task-list" dndDropzone dndEffectAllowed="move"
+            (dndDrop)="onDrop($event,todoTasks,'Todo-task')">
+            <div class="dndPlaceholder" dndPlaceholderRef></div>
+            <ng-container *ngFor="let task of todoTasks">
+              <div [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, todoTasks)">
+                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                </ng-template>
+              </div>
+            </ng-container>
+            <!-- end task card -->
+
+            <div class="text-center">
+              <a href="javascript: void(0);" class="btn btn-primary mt-1 waves-effect waves-light"><i
+                  class="mdi mdi-plus mr-1"></i> Add New</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card-body">
+        <div class="dropdown float-right" ngbDropdown>
+          <a href="javascript: void(0);" class="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false"
+            ngbDropdownToggle>
+            <i class="mdi mdi-dots-vertical m-0 text-muted font-size-20"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <a class="dropdown-item" ngbDropdownItem>Edit</a>
+            <a class="dropdown-item" ngbDropdownItem>Delete</a>
+          </div>
+        </div> <!-- end dropdown -->
+        <h4 class="card-title">In Progress</h4>
+        <p class="mb-0">3 Tasks</p>
+      </div>
+      <div class="card">
+        <div class="card-body border-bottom">
+
+          <div id="Progress-task" class="task-list" dndDropzone dndEffectAllowed="move"
+            (dndDrop)="onDrop($event,inprogressTasks,'Progress-task')">
+            <div class="dndPlaceholder" dndPlaceholderRef></div>
+            <ng-container *ngFor="let task of inprogressTasks">
+              <div [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, inprogressTasks)">
+                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                </ng-template>
+              </div>
+            </ng-container>
+            <!-- end task card -->
+
+            <div class="text-center">
+              <a href="javascript: void(0);" class="btn btn-primary mt-1 waves-effect waves-light"><i
+                  class="mdi mdi-plus mr-1"></i> Add New</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card-body">
+        <div class="dropdown float-right" ngbDropdown>
+          <a href="javascript: void(0);" class="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false"
+            ngbDropdownToggle>
+            <i class="mdi mdi-dots-vertical m-0 text-muted font-size-20"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
+            <a class="dropdown-item" ngbDropdownItem>Edit</a>
+            <a class="dropdown-item" ngbDropdownItem>Delete</a>
+          </div>
+        </div> <!-- end dropdown -->
+        <h4 class="card-title">Completed</h4>
+        <p class="mb-0">3 Tasks</p>
+      </div>
+      <div class="card">
+        <div class="card-body border-bottom">
+
+          <div id="Progress-task" class="task-list" dndDropzone dndEffectAllowed="move"
+            (dndDrop)="onDrop($event,completedTasks,'Progress-task')">
+            <div class="dndPlaceholder" dndPlaceholderRef></div>
+            <ng-container *ngFor="let task of completedTasks">
+              <div [dndDraggable]="task" dndEffectAllowed="move" (dndMoved)="onDragged(task, completedTasks)">
+                <ng-template [ngTemplateOutlet]="TaskContent" [ngTemplateOutletContext]="{task:task}">
+                </ng-template>
+              </div>
+            </ng-container>
+            <!-- end task card -->
+
+            <div class="text-center">
+              <a href="javascript: void(0);" class="btn btn-primary mt-1 waves-effect waves-light"><i
+                  class="mdi mdi-plus mr-1"></i> Add New</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #TaskContent let-task='task'>
+  <div class="card task-box">
+    <div class="progress progress-sm animated-progess" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0"
+        aria-valuemax="100"></div>
+    </div>
+    <div class="card-body">
+
+      <div class="float-right ml-2">
+        <div>
+          {{task.date}}
+        </div>
+      </div>
+      <div class="mb-3">
+        <a href="#" class="">{{task.id}}</a>
+      </div>
+      <div>
+        <h5 class="font-size-16"><a href="javascript: void(0);" class="text-dark">{{task.title}}</a></h5>
+        <p class="mb-4">{{task.text}}</p>
+      </div>
+
+      <div class="d-inline-flex team mb-0">
+        <div class="mr-3 align-self-center">
+          Team :
+        </div>
+        <div class="team-member">
+          <a href="javascript: void(0);" class="team-member d-inline-block" data-toggle="tooltip" data-placement="top"
+            title="Calvin Redrick">
+            <img :src="{{task.user[0]}}" class="rounded-circle avatar-xs" alt="">
+          </a>
+        </div>
+
+        <div class="team-member">
+          <a href="javascript: void(0);" class="team-member d-inline-block" data-toggle="tooltip" data-placement="top"
+            title="David Martinez">
+            <img :src="{{task.user[1]}}" class="rounded-circle avatar-xs" alt="">
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-template>

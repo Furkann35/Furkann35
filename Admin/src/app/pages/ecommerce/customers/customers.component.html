@@ -1,0 +1,124 @@
+<div class="container-fluid">
+  <app-pagetitle title="Customers" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <!--  -->
+            <a href="javascript:void(0);" class="btn btn-success mb-2" (click)="openModal(content)">
+              <i class="mdi mdi-plus mr-2"></i> Add Customer
+            </a>
+          </div>
+          <div class="table-responsive mt-3">
+            <table class="table table-centered datatable dt-responsive nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+              <thead>
+                <tr>
+                  <th sortable="billingname">Kullanıcı İsim</th>
+                  <th sortable="billingname" >Kullanıcı Soy İsim</th>
+                  <th sortable="total" >Email</th>
+                  <th sortable="billingname" >Başvuru Tarihi</th>
+                  <th sortable="paymentstatus" >Başvuru Durumu</th>
+                  <th>İşlemler</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let answersDto of answersDtos">
+                  <td>{{answersDto.userName}}</td>
+                  <td>{{answersDto.lastName}}</td>
+                  <td>{{answersDto.email}}</td>
+                  <td>{{answersDto.date  | date:'dd/MM/yyyy'}}</td>
+                    <td class="badge font-size-12" [ngClass]="{'badge-soft-danger': answersDto.stateId === 1,
+                    'badge-soft-success':answersDto.stateId === 2,
+                    'badge-soft-warning': answersDto.stateId === 0}">
+                      <ngb-highlight [result]="answersDto.state" ></ngb-highlight>
+                  </td>               
+
+                  <td>
+                    
+                    <a routerLink="/ecommerce/answers/answersDetail/{{answersDto.userId}}" class="mr-3 text-primary" v-b-tooltip.hover title="Ayrıntıları Görüntüle">
+                      <i class="mdi mdi-pencil font-size-18"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="text-danger" v-b-tooltip.hover title="Delete">
+                      <i class="mdi mdi-trash-can font-size-18"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contacts model  -->
+<ng-template #content role="document" let-modal="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Add Contacts</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body p-3">
+    <div class="text-left">
+      <form (ngSubmit)="saveData()" [formGroup]="validationform">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name" formControlName="name"
+            [ngClass]="{'is-invalid': submitted && form.name.errors}">
+          <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+            <span *ngIf="form.name.errors.required">Name is mendatory.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input class="form-control" id="email" placeholder="Enter email" formControlName="email"
+            [ngClass]="{'is-invalid': submitted && form.email.errors}">
+          <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+            <span *ngIf="form.email.errors.required">Email address is mendatory.</span>
+            <span *ngIf="form.email.errors.pattern">Please enter valid email.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Phone </label>
+          <input type="number" class="form-control" placeholder="Enter phone number" formControlName="phone"
+            [ngClass]="{'is-invalid': submitted && form.phone.errors}" minlength="10">
+          <div *ngIf="submitted && form.phone.errors" class="invalid-feedback">
+            <span *ngIf="form.phone.errors.required">Phone is mendatory.</span>
+            <span *ngIf="form.phone.errors.minlength">Phone number must be 10 characters.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Balance </label>
+          <input type="number" class="form-control" placeholder="Enter balance" formControlName="balance"
+            [ngClass]="{'is-invalid': submitted && form.balance.errors}">
+          <div *ngIf="submitted && form.balance.errors" class="invalid-feedback">
+            <span *ngIf="form.balance.errors.required">Balance is mendatory.</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Date </label>
+          <input class="form-control" placeholder="Enter date" formControlName="date"
+            [ngClass]="{'is-invalid': submitted && form.date.errors}">
+          <div *ngIf="submitted && form.date.errors" class="invalid-feedback">
+            <span *ngIf="form.date.errors.required">Date is mendatory.</span>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button type="submit" class="btn btn-success">Save</button>
+          <button type="button" class="btn btn-danger ml-1" (click)="modal('close click')">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

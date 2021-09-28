@@ -1,0 +1,45 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div *ngIf="user" class="container bootstrap snippets bootdey">
+<div class="row">
+  <div class="profile-nav col-md-3">
+      <div class="panel">
+          <div class="user-heading round">
+              <a href="#">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+              </a>
+              <h1  >{{user.firstName}} {{user.lastName}}</h1>
+              <p>{{user.email}}</p>
+          </div>
+          <ul  class="list-group">
+            <li routerLink="update" class="list-group-item">Profil Güncelleme</li>
+            <li class="list-group-item">Başvuru Görüntüleme</li>
+          </ul>
+      </div>
+  </div>
+  <div class="profile-info col-md-9">
+     
+      <div class="panel">
+          <div class="bio-graph-heading">
+              Bu sayfadan profilinle ilgili istediğin tüm işlemleri yapabilir ve görüntüleyebilirsiniz.
+          </div>
+          <div class="panel-body bio-graph-info">
+              <h1 style="text-align: center;">Profil Bilgileriniz</h1>
+              <div class="row">
+                  <div class="bio-row">
+                      <p><span>First Name </span>: {{user.firstName}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Last Name </span>: {{user.lastName}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Email </span>: {{user.email}}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+   
+  </div>
+</div>
+</div>

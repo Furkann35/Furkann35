@@ -1,0 +1,114 @@
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <app-pagetitle title="Alerts" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Default Alerts</h4>
+          <p class="card-title-desc">Alerts are available for any length of
+            text, as well as an optional dismiss button. For proper styling, use one
+            of the four <strong>required</strong> contextual type (e.g., <code
+              class="highlighter-rouge">success</code>).</p>
+
+          <div class="">
+
+            <ngb-alert [dismissible]="false" type="primary">
+              A simple primary alert—check it out!
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="secondary">
+              A simple secondary alert—check it out!
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="success">
+              A simple success alert—check it out!
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="danger">
+              A simple danger alert—check it out!
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="warning">
+              A simple warning alert—check it out!
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="info">
+              A simple info alert—check it out!
+            </ngb-alert>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Link color</h4>
+          <p class="card-title-desc">Use the <code class="highlighter-rouge">.alert-link</code> utility class to
+            quickly provide matching colored links within any alert.</p>
+
+            
+          <div class="">
+            <ngb-alert [dismissible]="false" type="primary">
+              A simple primary alert with <a href="javascript: void(0);" class="alert-link">an example link</a>. Give it
+              a click if you
+              like.
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="secondary">
+              A simple secondary alert with <a href="javascript: void(0);" class="alert-link">an example link</a>. Give
+              it a click if you
+              like.
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="success">
+              A simple success alert with <a href="javascript: void(0);" class="alert-link">an example link</a>. Give it
+              a click if you
+              like.
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="danger">
+              A simple danger alert with <a href="javascript: void(0);" class="alert-link">an example link</a>. Give it
+              a click if you
+              like.
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="warning">
+              A simple warning alert with <a href="javascript: void(0);" class="alert-link">an example link</a>. Give it
+              a click if you
+              like.
+            </ngb-alert>
+            <ngb-alert [dismissible]="false" type="info">
+              A simple info alert with <a href="javascript: void(0);" class="alert-link">an example link</a>. Give it a
+              click if you like.
+            </ngb-alert>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+
+  </div>
+  <!-- end row -->
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+
+          <h4 class="card-title">Dismissing</h4>
+          <p class="card-title-desc">
+            Add a dismiss button and the <code>.alert-dismissible</code> class, which adds extra padding
+            to the right of the alert and positions the <code>.close</code> button.
+          </p>
+
+          <div *ngFor="let color of alertData">
+            <ngb-alert type="{{color.color}}" (close)="close(color, alertData)">A simple
+              {{color.color}}
+              alert—check it out!</ngb-alert>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end col -->
+  </div>
+  <!-- end row -->
+</div> <!-- container-fluid -->

@@ -1,0 +1,229 @@
+<div class="container-fluid">
+  <app-pagetitle title="Donates" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+
+  <div class="row">
+    <div class="col-xl-3 col-lg-4">
+      <div class="card">
+        <div class="card-header bg-transparent border-bottom">
+          <h5 class="mb-0">Filtrele</h5>
+        </div>
+
+        <div class="card-body">
+          <h5 class="font-size-14 mb-3">Kategoriler</h5>
+          <ngb-accordion [closeOthers]="true" activeIds="static-1" class="custom-accordion categories-accordion">
+            <ngb-panel id="static-1" class="categories-group-card">
+              <ng-template ngbPanelTitle>
+                <i class="mdi mdi-desktop-classic font-size-16 align-middle mr-2"></i>
+                Donateler
+                <i class="mdi mdi-minus float-right accor-plus-icon"></i>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div>
+                  <ul *ngFor="let donateCategory of donateCategorys" class="list-unstyled categories-list mb-0">
+                    <li><a><i class="mdi mdi-circle-medium mr-1"></i>{{donateCategory.donate_category_name}}</a></li>
+                    <!-- <li><a href="javascript: void(0);"><i class="mdi mdi-circle-medium mr-1"></i> Mobile accessories</a>
+                    </li>
+                    <li><a href="javascript: void(0);"><i class="mdi mdi-circle-medium mr-1"></i> Computers</a></li>
+                    <li><a href="javascript: void(0);"><i class="mdi mdi-circle-medium mr-1"></i> Laptops</a></li>
+                    <li><a href="javascript: void(0);"><i class="mdi mdi-circle-medium mr-1"></i> Speakers</a></li> -->
+                  </ul>
+                </div>
+              </ng-template>
+            </ngb-panel>
+
+          </ngb-accordion>
+        </div>
+        <div class="custom-accordion">
+          <div class="card-body border-top">
+            <div>
+              <h5 class="font-size-14 mb-0"><a class="text-dark d-block" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Discount <i
+                    class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
+              <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                <div class="mt-4">
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productdiscountRadio6" name="productdiscountRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productdiscountRadio6">50% or more</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productdiscountRadio5" name="productdiscountRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productdiscountRadio5">40% or more</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productdiscountRadio4" name="productdiscountRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productdiscountRadio4">30% or more</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productdiscountRadio3" name="productdiscountRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productdiscountRadio3">20% or more</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productdiscountRadio2" name="productdiscountRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productdiscountRadio2">10% or more</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productdiscountRadio1" name="productdiscountRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productdiscountRadio1">Less than 10%</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body border-top">
+            <div>
+              <h5 class="font-size-14 mb-0"><a class="text-dark d-block" (click)="collapsed = !collapsed"
+                  [attr.aria-expanded]="!collapsed" aria-controls="collapseExample2">Size <i
+                    class="mdi mdi-minus float-right accor-plus-icon"></i></a></h5>
+
+              <div id="collapseExample2" [ngbCollapse]="collapsed">
+
+                <div class="mt-4">
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productsizeRadio1" name="productsizeRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productsizeRadio1">X-Large</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productsizeRadio2" name="productsizeRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productsizeRadio2">Large</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productsizeRadio3" name="productsizeRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productsizeRadio3">Medium</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productsizeRadio4" name="productsizeRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="productsizeRadio4">Small</label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="card-body border-top">
+            <div>
+              <h5 class="font-size-14 mb-0"><a (click)="collapsed3 = !collapsed3" [attr.aria-expanded]="!collapsed3"
+                  class="text-dark d-block" aria-controls="collapseExample3">Customer Rating <i
+                    class="mdi mdi-minus float-right accor-plus-icon"></i></a>
+              </h5>
+
+              <div id="collapseExample3" [ngbCollapse]="collapsed3">
+                <div class="mt-4">
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productratingRadio1" name="productratingRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productratingRadio1">4 <i
+                        class="mdi mdi-star text-warning"></i> & Above</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productratingRadio2" name="productratingRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productratingRadio2">3 <i
+                        class="mdi mdi-star text-warning"></i> & Above</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productratingRadio3" name="productratingRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productratingRadio3">2 <i
+                        class="mdi mdi-star text-warning"></i> & Above</label>
+                  </div>
+                  <div class="custom-control custom-radio mt-2">
+                    <input type="radio" id="productratingRadio4" name="productratingRadio1"
+                      class="custom-control-input">
+                    <label class="custom-control-label" for="productratingRadio4">1 <i
+                        class="mdi mdi-star text-warning"></i></label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <h5>Mal ve Mülk</h5>
+                  <ol class="breadcrumb p-0 bg-transparent mb-2">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Donate</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Clothing</a></li> -->
+                    <li class="breadcrumb-item active">Mal ve Mülk</li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-inline float-md-right">
+                  <div class="search-box ml-2">
+                    <div class="position-relative">
+                      <input [(ngModel)]="filterDonateName" type="text" class="form-control rounded" placeholder="Donate Ara...">
+                      <i class="mdi mdi-magnify search-icon"></i>
+                      <p *ngIf="filterDonateName">{{filterDonateName}} Aradınız</p>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- <ul class="list-inline my-3 ecommerce-sortby-list">
+              <li class="list-inline-item"><span class="font-weight-medium font-family-secondary">Sort by:</span></li>
+              <li class="list-inline-item active"><a href="javascript: void(0);">Popularity</a></li>
+              <li class="list-inline-item"><a href="javascript: void(0);">Newest</a></li>
+              <li class="list-inline-item"><a href="javascript: void(0);">Discount</a></li>
+            </ul> -->
+
+            <div class="row no-gutters">
+              <div class="col-xl-4 col-sm-6" *ngFor="let donate of DonateDetails |filterDonate:filterDonateName">
+                <div class="product-box">
+                  <div class="product-img">
+                    <!-- <div class="product-ribbon badge badge-primary">
+                      - {{}} %
+                    </div>
+                    -->
+                    <a  [routerLink]="['/ecommerce/products',donate.donateId]"> <img  *ngIf="donate.images.length !== 0"
+                         [src]="baseImageUrl + donate.images[0]" alt=""
+                        class="img-fluid mx-auto d-block">
+                        <img *ngIf="donate.images.length === 0"
+                         [src]="baseImageUrl + donate.images[0]" alt=""
+                        class="img-fluid mx-auto d-block">
+                    </a>
+                  </div>
+
+                  <div class="text-center">
+                    <!-- <p class="font-size-12 mb-1">{{donate.description}}</p> -->
+                    <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark">{{donate.donateName}}</a>
+                    </h5>
+
+                    <h5 class="mt-3 mb-0"><span class="text-muted mr-2"><del>₺{{donate.oldPrice}} </del></span>$
+                      {{donate.price}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col-lg-12">
+                <ngb-pagination class="pagination-rounded d-flex justify-content-center" [collectionSize]="6" page="1"
+                  [maxSize]="1" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end row -->
+
+</div> <!-- container-fluid -->

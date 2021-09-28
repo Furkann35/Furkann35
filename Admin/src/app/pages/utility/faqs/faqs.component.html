@@ -1,0 +1,257 @@
+<div class="container-fluid">
+  <app-pagetitle title="Faqs" [breadcrumbItems]="breadCrumbItems"></app-pagetitle>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mt-4">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <h4>Have any Questions ?</h4>
+                <p class="text-muted">It will be as simple as in fact, it will be occidental. it will seem like
+                  simplified English, as a skeptical Cambridge friend</p>
+
+                <div>
+                  <button type="button" class="btn btn-primary mt-2 mr-2 waves-effect waves-light">Email Us</button>
+                  <button type="button" class="btn btn-info mt-2 waves-effect waves-light">Send us a tweet</button>
+                </div>
+              </div>
+
+              <div class="row mt-5 justify-content-center">
+                <div class="col-lg-10">
+                  <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-pills faq-nav-tabs justify-content-center">
+                    <li [ngbNavItem]="1">
+                      <a ngbNavLink>General Questions</a>
+
+                      <ng-template ngbNavContent>
+                        <div>
+                          <div class="text-center mb-5">
+                            <h5>General Questions</h5>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit</p>
+                          </div>
+                          <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="static-1"
+                            class="custom-accordion-arrow">
+                            <ngb-panel id="static-1">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> What is Lorem Ipsum ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                If several languages coalesce, the grammar of the resulting language is more simple
+                                and regular than that of the individual languages. The new common language will be
+                                more simple and regular than the existing
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="static-2">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Why do we use it ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                Everyone realizes why a new common language would be desirable one could refuse to pay
+                                expensive translators. To achieve this, it would be necessary to have uniform grammar,
+                                pronunciation and more common words.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="static-3">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where can I get some ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                Their separate existence is a myth. For science, music, sport, etc, Europe uses the
+                                same vocabulary. The languages only differ in their grammar, their pronunciation and
+                                their most common words.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="static-4">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where does it come from ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                To an English person, it will seem like simplified English, as a skeptical Cambridge
+                                friend of mine told me what Occidental is. The European languages are members of the
+                                same family separate existence.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="static-5">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where can I get some ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                It will be as simple in fact, it will be occidental. To an English person, it will
+                                seem like simplified English, as a skeptical Cambridge friend of mine told me what
+                                occidental languages are members
+                              </ng-template>
+                            </ngb-panel>
+                          </ngb-accordion>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="2">
+                      <a ngbNavLink>Privacy Policy</a>
+                      <ng-template ngbNavContent>
+                        <div>
+                          <div class="text-center mb-5">
+                            <h5>Privacy Policy</h5>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia</p>
+                          </div>
+                          <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="privacy-acc-2"
+                            class="custom-accordion-arrow">
+                            <ngb-panel id="privacy-acc-1">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Why do we use it ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                Everyone realizes why a new common language would be desirable one could refuse to pay
+                                expensive translators. To achieve this, it would be necessary to have uniform grammar,
+                                pronunciation and more common words.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="privacy-acc-2">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> What is Lorem Ipsum ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                If several languages coalesce, the grammar of the resulting language is more simple
+                                and regular than that of the individual languages. The new common language will be
+                                more simple and regular than the existing
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="privacy-acc-3">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where can I get some ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                Their separate existence is a myth. For science, music, sport, etc, Europe uses the
+                                same vocabulary. The languages only differ in their grammar, their pronunciation and
+                                their most common words.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="privacy-acc-4">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where does it come from ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                To an English person, it will seem like simplified English, as a skeptical Cambridge
+                                friend of mine told me what Occidental is. The European languages are members of the
+                                same family separate existence.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="privacy-acc-5">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where can I get some ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                It will be as simple in fact, it will be occidental. To an English person, it will
+                                seem like simplified English, as a skeptical Cambridge friend of mine told me what
+                                occidental languages are members
+                              </ng-template>
+                            </ngb-panel>
+                          </ngb-accordion>
+                        </div>
+                      </ng-template>
+                    </li>
+                    <li [ngbNavItem]="3">
+                      <a ngbNavLink>Pricing & Plans</a>
+                      <ng-template ngbNavContent>
+                        <div>
+                          <div class="text-center mb-5">
+                            <h5>Pricing & Plans</h5>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit</p>
+                          </div>
+                          <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="pricing-acc-1"
+                            class="custom-accordion-arrow">
+                            <ngb-panel id="pricing-acc-1">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> What is Lorem Ipsum ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                If several languages coalesce, the grammar of the resulting language is more simple
+                                and regular than that of the individual languages. The new common language will be
+                                more simple and regular than the existing
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="pricing-acc-2">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where can I get some ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                Their separate existence is a myth. For science, music, sport, etc, Europe uses the
+                                same vocabulary. The languages only differ in their grammar, their pronunciation and
+                                their most common words.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="pricing-acc-3">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Why do we use it ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                Everyone realizes why a new common language would be desirable one could refuse to pay
+                                expensive translators. To achieve this, it would be necessary to have uniform grammar,
+                                pronunciation and more common words.
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="pricing-acc-4">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where can I get some ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                It will be as simple in fact, it will be occidental. To an English person, it will
+                                seem like simplified English, as a skeptical Cambridge friend of mine told me what
+                                occidental languages are members
+                              </ng-template>
+                            </ngb-panel>
+                            <ngb-panel id="pricing-acc-5">
+                              <ng-template ngbPanelTitle>
+                                <h5 class="font-size-14 m-0">
+                                  <i class="mdi mdi-chevron-up accor-arrow-icon"></i> Where does it come from ?
+                                </h5>
+                              </ng-template>
+                              <ng-template ngbPanelContent>
+                                To an English person, it will seem like simplified English, as a skeptical Cambridge
+                                friend of mine told me what Occidental is. The European languages are members of the
+                                same family separate existence.
+                              </ng-template>
+                            </ngb-panel>
+                          </ngb-accordion>
+                        </div>
+                      </ng-template>
+                    </li>
+                  </ul>
+                  <div [ngbNavOutlet]="nav" class="pt-5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
